@@ -18,7 +18,7 @@
     </ul>    
 </header>
 <body>
-    
+
     <div class="container">
         <div class="row">
           <div class="col-4">
@@ -26,15 +26,36 @@
                 <h3 >Search for a city:</h3>
                 <form id="user-form" class="card-body">
                   <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-                  <button type="submit" class="btn">Search</button>
+                  <button type="submit" class="btn" id="search">Search</button>
                   <hr>
                 </form>
               </div>
           </div>
-          <div class="col-8">
-            Column
+          <div class="col-8 weather-content" id="waether-container">
+           
       </div>
-
+      <div class="container">
+        <div class="row">
+          <div class="col-4" >
+            <div class="saved-city"></div>
+          </div>
+         
+          <div class="col-1 ">
+            <div class="day1"></div>
+          </div>
+          <div class="col-1">
+            <div class="day2"></div>
+          </div>
+          <div class="col-1">
+            <div class="day3"></div>
+          </div>
+          <div class="col-1">
+            <div class="day4"></div>
+          </div>
+          <div class="col-1">
+            <div class="day5"></div>
+          </div>
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

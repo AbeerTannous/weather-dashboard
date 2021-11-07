@@ -4,6 +4,7 @@ header {
 
 }
 header h1{
+    margin-left: 5px;
     font-size: 36px;
     color: white;
     
@@ -12,6 +13,7 @@ header h1{
     margin: 5px;
 }
 .btn{
+    
     margin: 5px;
     padding: 5px;
     background-color: rgb(35, 149, 224);
@@ -23,5 +25,11 @@ header h1{
     height: 50px;
 }
 .weather-content{
+    
+}
+.col-1{
+    border: solid;
+    background-color: cornflowerblue;
+    color: white;
     
 }
