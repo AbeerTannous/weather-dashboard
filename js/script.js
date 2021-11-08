@@ -1,6 +1,6 @@
 
 var submitBtn = document.querySelector('.btn');
-
+var city = document.getElementById('city').value;
 // the search function
 function searchCity() {
   event.preventDefault();
@@ -167,7 +167,7 @@ localStorage.setItem('city-List', JSON.stringify(list));
 });
 
 
-  
+  // the save function that fill up the local storage 
   function save(list){
      savedCitydiv.innerHTML="";
     for (var i = 0; i < list.length; i++) {
@@ -175,24 +175,25 @@ localStorage.setItem('city-List', JSON.stringify(list));
       savedCityBtn.setAttribute("style","width:300px;margin-left:10px;");
       savedCityBtn.classList.add("cityBtn");
       savedCityBtn.textContent = list[i];
-      savedCitydiv.appendChild(savedCityBtn);
-      savedCityBtn.addEventListener('click',function(){
+     
+        savedCitydiv.appendChild(savedCityBtn);
+    
+      savedCityBtn.addEventListener("click",function(){
         searchCityByBtn();
       });
-      
+    
     }
   }
-
  save(list);
-
-
-
+// the saved city button function that bring the forcast for the clicked button
  function searchCityByBtn() {
- // event.preventDefault();
-  var savedcity = document.querySelector(".cityBtn");
-  var city1 = savedcity.textContent;
-console.log(city1);
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city1 + '&appid=52da7c46d80159e3b01a379d985a8447')
+  event.preventDefault();
+ 
+   var savedCity = document.querySelector('.cityBtn');
+   for (var i = 0; i < list.length; i++) {
+   var city1 = savedCity.textContent;
+}
+   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city1 + '&appid=52da7c46d80159e3b01a379d985a8447')
 
     .then(function (response) {
       return response.json();
@@ -215,7 +216,7 @@ console.log(city1);
       var waetherContainerEl = document.querySelector('#waether-container');
       waetherContainerEl.innerHTML = '';
       var weather = document.createElement('span');
-      weather.textContent = city;
+      weather.textContent = city1;
       waetherContainerEl.appendChild(weather);
       var weather = document.createElement('span');
       weather.textContent = moment().format(" (MMM Do YY) ");
@@ -336,8 +337,8 @@ console.log(city1);
        dayfive.textContent = "wind:" + data.daily[4].wind_speed;
        day5.appendChild(dayfive);
 
-    });
-
+       });
+      
 }
 
 
